@@ -1,0 +1,43 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <app-formulaire-recherche
+      (newsearch)="onSearch($event)"
+    ></app-formulaire-recherche>
+  </mat-drawer>
+  <mat-grid-list cols="3" rowHeight="3:1" class="header">
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Recherche
+      </button>
+    </div>
+    <mat-grid-tile *ngFor="let item of forfaits" style="height: 350px">
+      <app-mini-forfait
+        [name]="item.name"
+        [price]="item.price"
+        [rating]="item.rating"
+        [date]="item.date"
+        [destination]="item.destination"
+        [depart]="item.destination"
+        [dure]="item.dure"
+      ></app-mini-forfait>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="150px" class="body">
+    <mat-grid-tile *ngFor="let item of forfaitscomplet"
+      ><app-forfait-complet
+        style="min-width: 100%"
+        [name]="item.name"
+        [price]="item.price"
+        [destination]="item.destination"
+        [departure]="item.departure"
+        [date]="item.date"
+        [length]="item.dure"
+        [rating]="item.rating"
+        [image]="item.image"
+      ></app-forfait-complet
+    ></mat-grid-tile>
+  </mat-grid-list>
+  <app-formulaire-gestion-forfait
+    *ngIf="showFormulairForfait"
+  ></app-formulaire-gestion-forfait>
+</mat-drawer-container>

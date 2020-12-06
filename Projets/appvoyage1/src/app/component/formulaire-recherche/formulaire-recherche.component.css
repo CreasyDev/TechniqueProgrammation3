@@ -1,0 +1,56 @@
+.container {
+  width: 40.625rem;
+  padding: 2rem;
+}
+
+.example-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.example-margin {
+  margin-left: 0.3125rem;
+}
+
+.separator {
+  margin-bottom: 3.125rem;
+}
+
+button {
+  padding: 0.7rem 1rem;
+  background-color: #002855;
+  border: 1px solid #fff;
+  border-radius: 0.3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:#707070;
+  color:#fff;
+}
+
+
+/** Medias Queries / résolution IPhone 6 7 8 + ----------- */
+
+@media only screen and (min-width: 25.875rem) and (max-width: 46rem) {
+
+  .container {
+    padding: 0.3125rem;
+  }
+  
+  .mat-form-field {
+    display: inline;
+  }
+
+  .separator {
+    width: 30%;
+  }
+
+  .example-section {
+    flex-direction: column;
+  }
+  
+}
+
+

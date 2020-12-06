@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Recherche</h1>
+  <div class="separator">
+    <mat-form-field appearance="fill">
+      <mat-label>Date de départ: </mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker1"
+        (dateInput)="dateChange($event.value)"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="margin-left: 40px">
+      <mat-label>Nombre de jours:</mat-label>
+      <mat-select (selectionChange)="selectChange($event.value)">
+        <mat-option value="7 jours">7 jours</mat-option>
+        <mat-option value="10 jours">10 jours</mat-option>
+        <mat-option value="14 jours">14 jours</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br />
+  <div class="separator">
+    <mat-label>Nombre d'étoiles:</mat-label>
+    <mat-slider
+      min="0"
+      max="5"
+      step="1"
+      [tickInterval]="1"
+      [thumbLabel]="thumbLabel"
+      (input)="ratingChange($event)"
+      style="margin-left: 40px"
+    ></mat-slider>
+  </div>
+  <br />
+  <div class="separator">
+    <mat-label>Charactéristique:</mat-label>
+    <br />
+    <section class="example-section">
+      <mat-checkbox
+        *ngFor="let item of characteristics"
+        class="example-margin"
+        value="beach"
+        (click)="characChanged(item)"
+        >{{ item }}</mat-checkbox
+      >
+    </section>
+  </div>
+
+  <div class="btn">
+    <button type="button" (click)="search()">Lancer la recherche</button>
+  </div>
+</div>

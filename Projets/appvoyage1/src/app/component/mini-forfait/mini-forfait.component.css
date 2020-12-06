@@ -1,0 +1,47 @@
+.container-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-style: none;
+  margin-top: 2rem;
+  min-width: 18.75rem;
+  padding: 1.875rem;
+}
+
+.container-header h3:nth-child(1) {
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.container-header h3:nth-child(2) {
+  font-weight: 600;
+}
+
+/* .container-header {
+  font-size: 0;
+} */
+
+/** Medias Queries / résolution IPhone 6 7 8 + ----------- */
+
+@media only screen and (min-width: 25.875rem) and (max-width: 46rem) {
+
+  .container-header {
+    text-align: center;
+    padding-top: 0.625rem;
+    margin-top: 0;
+  }
+
+  .container-header h3 {
+    font-size: 0.6650rem;
+    margin: 0 1.875rem;
+  }
+
+  .container-header h3:nth-child(1) {
+    padding-bottom: 0.2rem;
+    font-size: 0.6910rem;
+  }
+
+  .container-header {
+    font-size: 0;
+  }
+
+}
