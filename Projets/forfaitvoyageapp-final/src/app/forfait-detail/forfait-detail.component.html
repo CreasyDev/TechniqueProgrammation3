@@ -1,0 +1,17 @@
+<div class="row" style="margin-top: 5px;">
+    <h1>Destination: {{data.name}} </h1>
+</div>
+
+<mat-divider></mat-divider>
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let item of location"> <app-mini-forfait
+        [name]="item.value.hotel.nom"
+        [price]="item.value.prix"
+        [rating]="item.value.hotel.nombreEtoiles"
+        [date]="item.value.dateDepart"
+        [destination]="item.value.destination"
+        [depart]="item.value.villeDepart"
+        [dure]="item.value.dure"
+        >
+        </app-mini-forfait></mat-grid-tile>
+  </mat-grid-list>

@@ -1,0 +1,71 @@
+<!-- dialog-box-edit.component.html -->
+<h1 mat-dialog-title><strong>{{action}}</strong></h1>
+<div mat-dialog-content>
+  <!-- <mat-form-field ngIf="action == 'Modifier'">
+    <input placeholder="{{action}} Name" matInput [(ngModel)]="local_data.nom">
+  </mat-form-field> -->
+  <!-- <ng-template> -->
+    <mat-form-field>
+      <input placeholder="Nom de l'hotel" matInput [(ngModel)]="local_data.hotel.nom" />
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Coordonees" matInput [(ngModel)]="local_data.hotel.coordonnees" />
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Nombre d'etoiles" matInput [(ngModel)]="local_data.hotel.nombreEtoiles" />
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Nombre de chambres" matInput [(ngModel)]="local_data.hotel.nombreChambres" />
+    </mat-form-field> 
+    <mat-form-field  class="example-full-width">
+      <textarea  placeholder="Caracteristiques" matInput [(ngModel)]="local_data.hotel.caracteristiques" ></textarea>
+    </mat-form-field>   
+</div>
+    <mat-form-field>
+      <input placeholder="Destination" matInput [(ngModel)]="local_data.destination" />
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Ville depart" matInput [(ngModel)]="local_data.villeDepart" />
+    </mat-form-field>    
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Date de départ: </mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker1"
+        [(ngModel)]="local_data.dateDepart"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Date de retour: </mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker2"
+        [(ngModel)]="local_data.dateRetour"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>  
+    
+    <mat-form-field>
+      <input placeholder="Prix" matInput [(ngModel)]="local_data.prix" />
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Rabais" matInput [(ngModel)]="local_data.rabais" />
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="local_data.vedette">
+       En vedette
+    </mat-checkbox>
+    <br />
+    <br />
+    <br />
+<div mat-dialog-actions>
+  <div class="example-button-row">
+  <button  mat-raised-button color="primary"   (click)="doAction()" >{{action}}</button>
+  <button  mat-raised-button color="accent"   (click)="closeDialog()" >Cancel</button>
+  </div>
+ 
+</div>

@@ -1,0 +1,63 @@
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Destination</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="margin-left: 20px">
+    <mat-label>Ville de départ</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Date de départ</mat-label>
+    <input matInput [matDatepicker]="picker1" />
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="margin-left: 20px">
+    <mat-label>Date de retour</mat-label>
+    <input matInput [matDatepicker]="picker2" />
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Prix</mat-label>
+    <input matInput type="number" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="margin-left: 20px">
+    <mat-label>Rabais</mat-label>
+    <input matInput type="number" />
+  </mat-form-field>
+  <br />
+  <h2>Information sur l'Hôtel:</h2>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="margin-left: 20px">
+    <mat-label>Coordonnées</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <br />
+  <mat-label>Nombre d'étoiles:</mat-label>
+  <mat-slider min="0" max="5" step="1" style="margin-left: 20px"></mat-slider>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre de(s) chambre(s)</mat-label>
+    <input matInput type="number" />
+  </mat-form-field>
+  <br />
+  <mat-label>Charactéristique:</mat-label>
+  <br />
+  <section class="example-section">
+    <mat-checkbox
+      *ngFor="let item of characteristics"
+      class="example-margin"
+      value="beach"
+      style="margin: 5px"
+      >{{ item }}</mat-checkbox
+    >
+  </section>
+</div>

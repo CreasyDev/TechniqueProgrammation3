@@ -1,0 +1,25 @@
+<!-- <app-dashboard></app-dashboard> -->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <!-- <button mat-icon-button>
+          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button> -->
+      <h1>AppVoyage</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/'"> Accueil </a>
+        <a mat-button [routerLink]="'/forfait-detail-mexique'"> Forfait Mexique </a>
+        <a mat-button [routerLink]="'/forfait-detail-cuba'"> Forfait Cuba </a>
+        <a mat-button [routerLink]="'/apropos'"> A propos </a>
+        <a mat-button [routerLink]="'/administration'"> Administration </a>
+        
+        <!-- <button type="button" mat-button (click)="drawer.toggle()">
+          Recherche
+        </button> -->
+      </div>
+    </mat-toolbar-row>
+  
+   
+  </mat-toolbar>
+  <notifier-container></notifier-container>
+  <router-outlet> </router-outlet>

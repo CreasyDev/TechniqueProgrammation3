@@ -1,0 +1,49 @@
+.header {
+  background-image: url("../../../assets/images/b-hero2.jpg");
+  height: 28.125rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: 2.5rem;
+}
+
+.header button {
+  padding: 0.5rem 2rem;
+  background: #002855;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color:#707070;
+  color:#fff;
+}
+
+.example-sidenav-content {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5625rem;
+}
+
+.example-sidenav {
+  width: 30%;
+  padding: 1.25rem;
+  position: fixed;
+  z-index: 100;
+}
+
+.vedette{
+  background-color: green;
+}
+/** Medias Queries / résolution IPhone 6 7 8 + ----------- */
+
+@media only screen and (min-width: 25.875rem) and (max-width: 46rem) {
+
+  .example-sidenav {
+    width: 60%;
+  }
+
+}
+
+

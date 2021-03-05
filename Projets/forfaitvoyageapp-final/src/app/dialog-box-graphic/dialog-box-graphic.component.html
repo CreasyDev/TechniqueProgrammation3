@@ -1,0 +1,26 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title><strong>{{action}}</strong></h1>
+<div mat-dialog-content> 
+  <div style="display: block;">
+    <canvas baseChart width="200" height="100"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [colors]="lineChartColors"    
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+  <div style="display: block;">
+    <canvas baseChart width="200" height="100"
+      [datasets]="lineChartData2"
+      [labels]="lineChartLabels"
+      [colors]="lineChartColors"    
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <!-- <button  mat-raised-button color="primary"  (click)="doAction()" style="color: green; margin-right: 2px;">{{action}}</button> -->
+  <button  mat-raised-button color="accent"  (click)="closeDialog()"  style="color: blue;">Fermer</button>
+</div>

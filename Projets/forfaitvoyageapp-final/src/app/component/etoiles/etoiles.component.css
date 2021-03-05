@@ -1,0 +1,19 @@
+button {
+    background: none;
+    border: none;
+    color: #002855;
+}
+
+
+/** Medias Queries / résolution IPhone 6 7 8 + ----------- */
+
+@media only screen and (min-width: 25.875rem) and (max-width: 46rem) {
+    
+    .material-icons {
+        font-family: 'Material Icons';
+        font-size: 0.9875rem;
+        width: 0.5rem;
+        line-height: 2;
+    }
+}
+

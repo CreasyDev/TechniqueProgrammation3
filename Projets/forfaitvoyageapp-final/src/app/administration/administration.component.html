@@ -1,0 +1,30 @@
+<div class="container text-center" style="margin: 10px;">
+
+    <button mat-button (click)="openAddDialog('Ajouter',{})" mat-flat-button color="primary" style="margin-bottom: 5px;">Ajouter</button>
+    <button mat-button (click)="openGraphicDialog('Graphiques',{})" mat-flat-button color="accent" style="margin-bottom: 5px; margin-left: 5px;">Graphique</button>
+  
+    <table mat-table [dataSource]="dataSource" #mytable class="my-table mat-elevation-z8">
+     
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Nom</th>
+        <td mat-cell *matCellDef="let element"> <span *ngIf="element.hotel != undefined"> {{element.hotel.nom}} </span> </td>
+      </ng-container>  
+     
+  
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element" class="action-link"> 
+          <a (click)="openEditDialog('Modifier',element)" style="color: green; margin-right: 2px;"> <mat-icon>edit</mat-icon></a> | 
+          <a (click)="openDialog('Supprimer',element)" style="color: red; margin-right: 2px;"><mat-icon>delete</mat-icon></a>  
+        </td>
+      </ng-container>
+      <mat-paginator  [length]="100"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+  </div>

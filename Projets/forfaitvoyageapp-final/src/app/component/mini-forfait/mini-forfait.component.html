@@ -1,0 +1,11 @@
+<div class="container-header">
+  <h3>Nom: {{ name }}</h3>
+  <h3>Prix: {{ price }}$</h3>
+  <h3>Destination: {{ destination }}</h3>
+  <h3>Ville de départ: {{ depart }}</h3>
+  <h3>Date: {{ date }}</h3>
+  <h3>Durée: {{ dure }}</h3>
+  <h3 *ngIf="discount > 0"  style="background-color: green; color: white; border-radius: 0.5em; text-align: center; padding: 2px;">Rabais: {{ discount }}</h3>
+  <h3 *ngIf="priceDiscount > 0"  style="background-color: green; color: white; border-radius: 0.5em; text-align: center; padding: 2px;">Prix avec rabais: {{ priceDiscount }}</h3>
+  <app-etoiles [rating]="rating"></app-etoiles>
+</div>

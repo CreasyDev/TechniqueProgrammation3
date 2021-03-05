@@ -1,0 +1,55 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <app-formulaire-recherche
+      (newsearch)="onSearch($event)"
+    ></app-formulaire-recherche>
+  </mat-drawer>
+ 
+  <mat-grid-list cols="3" rowHeight="3:1" class="header">
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Recherche
+      </button>
+    </div>
+
+    <div *ngIf="forfaits.length == 0" style="margin:30px; font-size: x-large;">  Aucune donnée en trouvée.</div>
+    <mat-grid-tile *ngFor="let item of forfaits" style="height: 350px">     
+      <app-mini-forfait
+        [name]="item.value.hotel.nom"
+        [price]="item.value.prix"
+        [rating]="item.value.hotel.nombreEtoiles"
+        [date]="formatDate(item.value.dateDepart)"
+        [destination]="item.value.destination"
+        [depart]="item.value.villeDepart"
+        [dure]="calculateDuration(item.value.dateDepart,item.value.dateRetour)"
+        [discount]="item.value.rabais"
+        [priceDiscount]="calculateDiscount(item.value.prix, item.value.rabais)"
+      ></app-mini-forfait>  </mat-grid-tile>
+  </mat-grid-list>
+  <div *ngIf="forfaitscomplet.length == 0" style="margin:30px; font-size: x-large;"> Aucune donnée en trouvée.</div>
+  <mat-grid-list cols="1" rowHeight="150px" class="body">
+    <mat-grid-tile *ngFor="let item of forfaitscomplet"
+      >
+      <app-forfait-complet
+        style="min-width: 100%"        
+        [name]="item.value.hotel.nom"
+        [price]="item.value.prix"
+        [destination]="item.value.destination"
+        [departure]="item.value.villeDepart"
+        [date]="formatDate(item.value.dateDepart)"
+        [length]="calculateDuration(item.value.dateDepart,item.value.dateRetour)"
+        [rating]="item.value.hotel.nombreEtoiles"
+        [image]="'https://via.placeholder.com/150'"
+        [discount]="item.value.rabais"
+        [vedette]="item.value.vedette"
+        [priceDiscount]="calculateDiscount(item.value.prix, item.value.rabais)"
+        [forfaitImage]="item.value.forfaitImage"
+      >
+      </app-forfait-complet
+    >
+  </mat-grid-tile>
+  </mat-grid-list>
+  <app-formulaire-gestion-forfait
+    *ngIf="showFormulairForfait"
+  ></app-formulaire-gestion-forfait>
+</mat-drawer-container>
